@@ -34,7 +34,8 @@ pipeline{
 
             steps{
                 script{
-                    mavenIntegration()
+                    //mavenIntegration()
+                    sh 'mvn verify -DskipUnitTests'
                 }   
             }
 
