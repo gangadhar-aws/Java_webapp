@@ -13,7 +13,7 @@ pipeline{
 
       
         stage("Git Checkout"){
-                 when { expression { params.action == 'Create' }}
+                 when { expression { param.action == 'Create' }}
             steps{
                 script{
                     gitCheckout(
