@@ -17,14 +17,15 @@ pipeline{
             }   }
 
         }
-        
+
     // Stage 2 Unit Test
         stage("Maven Unit Test"){
 
             steps{
                 script{
                      mvnTest()
-            }   }
+                }   
+            }
 
         }
 
