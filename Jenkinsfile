@@ -11,9 +11,9 @@ pipeline{
 
     // stage 1 Git checkout    
 
-        when{expression { params.action == 'create' }}
+      
         stage("Git Checkout"){
-
+        when{ expression { params.action == 'create' }}
             steps{
                 script{
                     gitCheckout(
@@ -25,9 +25,9 @@ pipeline{
         }
 
     // Stage 2 Unit Test
-        when{expression { params.action == 'create' }}
+       
         stage("Maven Unit Test"){   
-
+        when{ expression { params.action == 'create' }}
             steps{
                 script{
                      mvnTest()
@@ -37,8 +37,9 @@ pipeline{
         }
 
     // Integration Test
-          when{expression { params.action == 'create' }}
-          stage("Maven Integration Test"){   
+          
+          stage("Maven Integration Test"){  
+            when{expression { params.action == 'create' }}
 
             steps{
                 script{
