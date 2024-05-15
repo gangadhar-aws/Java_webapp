@@ -5,6 +5,7 @@ pipeline{
 
     stages{
 
+    // stage 1 Git checkout    
         stage("Git Checkout"){
 
             steps{
@@ -16,6 +17,17 @@ pipeline{
             }   }
 
         }
+        
+    // Stage 2 Unit Test
+        stage("Maven Unit Test"){
+
+            steps{
+                script{
+                     mvnTest()
+            }   }
+
+        }
+
 
     }
 }
