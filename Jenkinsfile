@@ -50,6 +50,21 @@ pipeline{
 
         }
 
+    // Static Code Analaysis
+          
+          stage("Static Code Analaysi"){  
+                when {expression { params.action == 'create' }}
+            steps{
+                script{   
+                   staticCodeanalysis()
+                }   
+            }
+
+        }
+
+
+
+
 
 
 
